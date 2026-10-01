@@ -1,0 +1,106 @@
+.container {
+    margin-inline: auto;
+    max-width: calc(var(--container) + var(--gutter) * 2);
+    padding-inline: var(--gutter);
+    width: 100%;
+}
+
+.container--narrow {
+    max-width: calc(var(--container-narrow) + var(--gutter) * 2);
+}
+
+.container--measure {
+    max-width: calc(var(--measure) + var(--gutter) * 2);
+}
+
+.section {
+    padding-block: var(--space-7) var(--space-6);
+    position: relative;
+}
+
+.section--grey {
+    background: var(--color-section);
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.section--grey .section__title {
+    color: var(--color-ink-strong);
+}
+
+.section--paper {
+    background: var(--color-paper);
+}
+
+.section__title {
+    margin-bottom: var(--space-6);
+    text-align: center;
+}
+
+.section__intro {
+    color: var(--color-ink);
+    font-size: var(--text-md);
+    margin: calc(var(--space-6) * -0.5) auto var(--space-6);
+    max-width: var(--measure);
+    text-align: center;
+}
+
+.with-aside {
+    display: grid;
+    gap: var(--space-7) var(--space-8);
+    padding-block: var(--space-8);
+}
+
+.with-aside__main {
+    align-content: start;
+    display: grid;
+    gap: var(--space-8);
+    min-width: 0;
+}
+
+.with-aside__aside {
+    align-content: start;
+    display: grid;
+    gap: var(--space-6);
+}
+
+@media (min-width: 60rem) {
+    .with-aside {
+        grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem);
+    }
+
+    .with-aside__aside {
+        align-self: start;
+        position: sticky;
+        top: calc(var(--header-height) + var(--space-6));
+    }
+}
+
+.visually-hidden {
+    block-size: 1px;
+    clip-path: inset(50%);
+    inline-size: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.skip-link {
+    background: var(--color-ink-deep);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-weight: 500;
+    left: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    position: absolute;
+    top: 0;
+    transform: translateY(-120%);
+    transition: transform var(--duration) var(--ease);
+    z-index: 100;
+}
+
+.skip-link:focus {
+    color: var(--color-white);
+    outline-color: var(--color-copper);
+    transform: translateY(var(--space-4));
+}

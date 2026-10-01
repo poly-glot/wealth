@@ -1,0 +1,102 @@
+.strategy-grid {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    list-style: none;
+    padding: 0;
+}
+
+.strategy-card {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-rows: 1fr auto;
+    min-height: clamp(13rem, 9rem + 12vw, 17.625rem);
+    padding: clamp(var(--space-6), 1rem + 4vw, 4.375rem) var(--space-6) 2.25rem;
+    position: relative;
+}
+
+.strategy-card--blue {
+    background: var(--color-card-blue);
+}
+
+.strategy-card--lavender {
+    background: var(--color-card-lavender);
+}
+
+.strategy-card--paper {
+    background: var(--color-card-paper);
+}
+
+.strategy-card--tan {
+    background: var(--color-card-tan);
+}
+
+.strategy-card__title {
+    color: var(--color-ink-strong);
+    font-size: var(--text-xl);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.strategy-card__summary {
+    color: var(--color-ink-strong);
+    font-size: var(--text-base);
+}
+
+.strategy-card__link {
+    align-items: center;
+    align-self: end;
+    color: var(--color-ink-strong);
+    display: inline-flex;
+    font-size: var(--text-md);
+    gap: var(--space-1);
+    justify-self: start;
+    text-decoration: none;
+}
+
+.strategy-card__link::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+}
+
+.strategy-card__link .icon {
+    transition: transform var(--duration) var(--ease);
+}
+
+.strategy-card:hover .strategy-card__link {
+    color: var(--color-ink-deep);
+    text-decoration: underline;
+}
+
+.strategy-card:hover .strategy-card__link .icon {
+    transform: translateX(3px);
+}
+
+.strategy-meta {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.strategy-meta a {
+    color: var(--color-copper);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+.strategy-meta a:hover {
+    color: var(--color-ink-deep);
+}
+
+.strategy-grid__motif {
+    bottom: clamp(-8rem, -8vw, -3rem);
+    position: absolute;
+    right: clamp(-8rem, -6vw, -3rem);
+    width: clamp(14rem, 28vw, 27rem);
+    z-index: -1;
+}

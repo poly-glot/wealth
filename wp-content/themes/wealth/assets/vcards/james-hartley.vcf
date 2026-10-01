@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Hartley;James;;;
+FN:James Hartley
+ORG:Wealth Asset Management LLP
+TITLE:Chief Executive
+EMAIL;TYPE=INTERNET,WORK:james.hartley@wealth-am.co.uk
+TEL;TYPE=WORK,VOICE:+442079460123
+URL:https://www.linkedin.com/in/james-hartley
+ADR;TYPE=WORK:;;14 King Street\, St James's;London;;SW1Y 6QU;United Kingdom
+END:VCARD

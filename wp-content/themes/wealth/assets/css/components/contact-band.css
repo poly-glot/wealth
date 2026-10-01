@@ -1,0 +1,28 @@
+.contact-band__header {
+    background: var(--color-slate);
+    padding-block: clamp(var(--space-6), 1rem + 2.5vw, 2.5rem);
+    text-align: center;
+}
+
+.contact-band__map {
+    background: var(--color-slate-light);
+    display: grid;
+    isolation: isolate;
+    min-height: 20.625rem;
+    overflow: hidden;
+    padding: var(--space-7) var(--gutter);
+    place-items: center;
+    position: relative;
+}
+
+.contact-band__image {
+    filter: grayscale(1);
+    height: 100%;
+    inset: 0;
+    mix-blend-mode: luminosity;
+    object-fit: cover;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}

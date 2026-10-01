@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" color="#58585a" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+    <title>Wealth</title>
+    <circle cx="60" cy="60" r="46" />
+    <circle cx="60" cy="60" r="41" />
+    <path d="M60 4 63.44 51.69 86.87 33.13 68.31 56.56 116 60 68.31 63.44 86.87 86.87 63.44 68.31 60 116 56.56 68.31 33.13 86.87 51.69 63.44 4 60 51.69 56.56 33.13 33.13 56.56 51.69Z" />
+    <path d="M60 4v112M4 60h112M33.13 33.13l53.74 53.74M86.87 33.13 33.13 86.87" />
+    <path d="M60 4 63.44 51.69 60 60Z" fill="#8a6450" />
+</svg>

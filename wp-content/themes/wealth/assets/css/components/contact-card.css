@@ -1,0 +1,76 @@
+.contact-card {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--text-md);
+    font-style: normal;
+    gap: var(--space-5) var(--space-6);
+    justify-content: space-between;
+    line-height: 1.55;
+    max-width: 42rem;
+    padding: 2.25rem var(--space-6);
+    width: 100%;
+}
+
+.contact-card__row {
+    align-items: start;
+    display: flex;
+    gap: var(--space-3);
+}
+
+.contact-card__row .icon {
+    color: var(--color-ink-strong);
+    height: 1.75rem;
+    stroke-width: 1.25;
+    width: 1.75rem;
+}
+
+.contact-card__address {
+    flex: 0 1 15rem;
+}
+
+.contact-card__name {
+    color: var(--color-ink-strong);
+    display: block;
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.contact-card__list {
+    display: grid;
+    gap: var(--space-3);
+    list-style: none;
+    padding: 0;
+}
+
+.contact-card__list .contact-card__row {
+    align-items: center;
+}
+
+.contact-card a {
+    color: inherit;
+    overflow-wrap: anywhere;
+    text-decoration-color: var(--color-slate-light);
+}
+
+.contact-card a:hover {
+    color: var(--color-ink-deep);
+    text-decoration-color: currentColor;
+}
+
+.contact-card__social {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+}
+
+.contact-card__social-label {
+    margin-right: var(--space-2);
+}
+
+.contact-card .icon-link {
+    color: var(--color-ink-deep);
+}

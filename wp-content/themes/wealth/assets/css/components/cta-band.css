@@ -1,0 +1,31 @@
+.cta-band {
+    background: var(--color-slate);
+    color: var(--color-white);
+    padding-block: var(--space-8);
+    text-align: center;
+}
+
+.cta-band__inner {
+    display: grid;
+    gap: var(--space-5);
+    justify-items: center;
+}
+
+.cta-band__title {
+    color: var(--color-white);
+    font-size: var(--text-xl);
+    text-transform: uppercase;
+}
+
+.cta-band__body {
+    font-size: var(--text-md);
+    max-width: var(--measure);
+}
+
+.cta-band a:not(.button) {
+    color: var(--color-white);
+}
+
+.cta-band :focus-visible {
+    outline-color: var(--color-white);
+}

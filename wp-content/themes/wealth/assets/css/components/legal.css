@@ -1,0 +1,42 @@
+.legal {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.legal__updated {
+    color: var(--color-ink);
+    font-size: var(--text-sm);
+}
+
+.legal__notice {
+    background: var(--color-aqua);
+    color: var(--color-ink-deep);
+    font-size: var(--text-base);
+    padding: var(--space-5) var(--space-6);
+}
+
+.legal .prose h2,
+.legal .prose h3 {
+    color: var(--color-ink-deep);
+}
+
+.legal__toc-title {
+    color: var(--color-ink-deep);
+    font-size: var(--text-md);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+}
+
+.legal__toc-list {
+    display: grid;
+    gap: var(--space-1);
+    list-style: none;
+    padding: 0;
+}
+
+.legal__toc-list a {
+    display: inline-block;
+    padding-block: var(--space-1);
+}

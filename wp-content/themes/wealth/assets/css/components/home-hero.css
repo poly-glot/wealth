@@ -1,0 +1,58 @@
+.home-hero {
+    align-content: start;
+    background: var(--color-slate);
+    display: grid;
+    isolation: isolate;
+    justify-items: center;
+    min-height: clamp(30rem, 75vh, 47.875rem);
+    overflow: hidden;
+    padding: clamp(var(--space-7), 8vw, 8.1875rem) var(--gutter) clamp(7rem, 5rem + 6vw, 11rem);
+    position: relative;
+}
+
+.home-hero__image {
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    object-position: 50% 60%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.home-hero__panel {
+    background: var(--color-veil);
+    max-width: 54rem;
+    padding: clamp(var(--space-6), 3vw + var(--space-2), 4rem) clamp(var(--space-5), 5vw, 5.5rem);
+    width: 100%;
+}
+
+.home-hero__title {
+    color: var(--color-ink-deep);
+    font-size: var(--text-2xl);
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.home-hero__line {
+    display: block;
+}
+
+.home-hero__text {
+    color: var(--color-ink-deep);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 300;
+    line-height: 1.5;
+    margin-top: var(--space-6);
+}
+
+.home-hero__next {
+    bottom: clamp(var(--space-5), 3vw, 3rem);
+    inset-inline: 0;
+    position: absolute;
+}
+
+.home-hero__next .chevron {
+    margin-top: 0;
+}
