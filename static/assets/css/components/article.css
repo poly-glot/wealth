@@ -48,6 +48,18 @@
     margin-block: var(--space-7);
 }
 
+.article__disclaimer {
+    border-top: 1px solid var(--color-section);
+    color: var(--color-ink);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    padding-top: var(--space-5);
+}
+
+.prose .article__disclaimer {
+    margin-top: var(--space-7);
+}
+
 .article__author {
     align-items: center;
     border-top: 1px solid var(--color-section);

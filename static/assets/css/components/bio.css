@@ -138,15 +138,17 @@
 }
 
 .bio__portrait {
-    align-self: end;
+    align-self: stretch;
     aspect-ratio: 3 / 4;
     background: var(--color-section);
+    height: 100%;
     object-fit: cover;
+    object-position: 50% 0;
     width: 100%;
 }
 
 .bio__back {
-    padding-block: var(--space-6) 0;
+    padding-block: var(--space-6);
 }
 
 @media (min-width: 56rem) {

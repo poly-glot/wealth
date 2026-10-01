@@ -21,6 +21,10 @@
     text-transform: uppercase;
 }
 
+.section-heading {
+    margin-bottom: var(--space-6);
+}
+
 .subtitle {
     color: var(--color-ink);
     font-family: var(--font-display);

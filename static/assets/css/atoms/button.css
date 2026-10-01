@@ -55,6 +55,12 @@
     outline-color: var(--color-white);
 }
 
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
 .button__icon {
     height: 1.125rem;
     transition: transform var(--duration) var(--ease);
