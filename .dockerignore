@@ -1,0 +1,7 @@
+.devcontainer
+.git
+.github
+.idea
+Dockerfile
+README.md
+wp-content/uploads

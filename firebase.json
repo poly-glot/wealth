@@ -1,0 +1,16 @@
+{
+    "hosting": {
+        "ignore": ["firebase.json", "**/.*"],
+        "public": "dist",
+        "rewrites": [
+            {
+                "run": {
+                    "region": "europe-west2",
+                    "serviceId": "wealth"
+                },
+                "source": "**"
+            }
+        ],
+        "site": "wealth-junaid"
+    }
+}

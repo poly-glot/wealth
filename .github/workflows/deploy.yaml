@@ -1,0 +1,49 @@
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google-github-actions/auth@v2
+        with:
+          service_account: ${{ secrets.GCP_SA_EMAIL }}
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+      - uses: google-github-actions/setup-gcloud@v2
+      - run: gcloud auth configure-docker europe-west2-docker.pkg.dev --quiet
+      - run: docker build -t "$IMAGE:${{ github.sha }}" -t "$IMAGE:latest" .
+      - run: docker push --all-tags "$IMAGE"
+      - run: >-
+          gcloud run deploy "${{ github.event.repository.name }}"
+          --image "$IMAGE:${{ github.sha }}"
+          --project firebase-cloud-491613
+          --quiet
+          --region europe-west2
+      - run: >-
+          gcloud run jobs update "${{ github.event.repository.name }}-bootstrap"
+          --image "$IMAGE:${{ github.sha }}"
+          --project firebase-cloud-491613
+          --quiet
+          --region europe-west2
+      - run: >-
+          gcloud run jobs execute "${{ github.event.repository.name }}-bootstrap"
+          --project firebase-cloud-491613
+          --quiet
+          --region europe-west2
+          --wait
+      - run: >-
+          npx --yes firebase-tools deploy
+          --only hosting:wealth-junaid
+          --non-interactive
+          --project firebase-cloud-491613
+
+env:
+  IMAGE: europe-west2-docker.pkg.dev/firebase-cloud-491613/firebase-cloud/${{ github.event.repository.name }}
+
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main

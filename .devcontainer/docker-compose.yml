@@ -1,0 +1,49 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    command: frankenphp run --config /etc/frankenphp/Caddyfile --adapter caddyfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_NAME: exampledb
+      DB_PASS: examplepass
+      DB_USER: exampleuser
+      PHP_INI_SCAN_DIR: ':/app/dev-ini'
+      SERVER_NAME: ':80'
+    ports:
+      - 8080:80
+    restart: always
+    volumes:
+      - ..:/workspace:cached
+      - ./dev-ini:/app/dev-ini:cached
+      - ../wp-content/plugins:/app/public/wp-content/plugins:cached
+      - ../wp-content/seed:/app/public/wp-content/seed:cached
+      - ../wp-content/themes:/app/public/wp-content/themes:cached
+      - ../wp-content/uploads:/app/public/wp-content/uploads:cached
+      - ../wp-content/yacf:/app/public/wp-content/yacf:cached
+
+  db:
+    environment:
+      MYSQL_DATABASE: exampledb
+      MYSQL_PASSWORD: examplepass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      MYSQL_USER: exampleuser
+    healthcheck:
+      interval: 5s
+      retries: 12
+      start_period: 30s
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      timeout: 5s
+    image: mariadb
+    ports:
+      - 3307:3306
+    restart: unless-stopped
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  db:

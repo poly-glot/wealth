@@ -1,0 +1,11 @@
+👋 Welcome to the agency WordPress devcontainer!
+
+The site is running at http://localhost:8080 (admin / password at /wp-admin).
+
+WordPress core and the platform (mu-plugins, wp-config, object cache) come from
+the wp-base image. This repo owns wp-content/{themes,plugins,yacf,seed}.
+
+Common commands (run from /workspace):
+  php /app/public/wp-content/mu-plugins/yacf/build.php   rebuild the content model
+  php /app/public/wp-content/seed/run.php                re-run the content seed
+  wp <anything>                                          wp-cli against the local site
