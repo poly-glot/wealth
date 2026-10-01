@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Herrera;Tomás;;;
+FN:Tomás Herrera
+ORG:Wealth Asset Management LLP
+TITLE:CFA\, Portfolio Manager\, Multi-Asset
+EMAIL;TYPE=INTERNET,WORK:tomas.herrera@wealth-am.co.uk
+TEL;TYPE=WORK,VOICE:+442079460123
+URL:https://www.linkedin.com/in/tomas-herrera
+ADR;TYPE=WORK:;;14 King Street\, St James's;London;;SW1Y 6QU;United Kingdom
+END:VCARD
