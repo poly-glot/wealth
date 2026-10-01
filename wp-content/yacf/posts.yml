@@ -1,0 +1,9 @@
+field_groups:
+  post_author_profile:
+    post_types: [post]
+    title: Author
+    fields:
+      author_profile:
+        label: Author profile
+        post_types: [team_member]
+        type: post

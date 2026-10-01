@@ -1,0 +1,44 @@
+post_types:
+  enquiry:
+    icon: dashicons-email
+    label: Enquiries
+    public: false
+    show_ui: true
+    singular: Enquiry
+    supports: [title]
+
+field_groups:
+  enquiry_details:
+    post_types: [enquiry]
+    title: Enquiry
+    fields:
+      name:
+        label: Name
+        type: text
+        width: 50
+      organisation:
+        label: Organisation
+        type: text
+        width: 50
+      email:
+        column: true
+        label: Email
+        type: email
+        width: 50
+      phone:
+        label: Phone
+        type: text
+        width: 50
+      investor_type:
+        choices: [Institutional investor, Wealth manager or adviser, Consultant, Family office, Press, Other]
+        column: true
+        label: Investor type
+        type: select
+      message:
+        label: Message
+        rows: 6
+        searchable: true
+        type: textarea
+      consent:
+        label: Consent given
+        type: true_false

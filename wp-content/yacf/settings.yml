@@ -1,0 +1,76 @@
+options_pages:
+  site_settings:
+    icon: dashicons-admin-settings
+    title: Site settings
+
+field_groups:
+  site_settings_contact:
+    options_pages: [site_settings]
+    title: Contact details
+    fields:
+      phone:
+        label: Phone (display)
+        type: text
+        width: 50
+      phone_href:
+        label: Phone (tel link)
+        type: text
+        width: 50
+      email:
+        label: General email
+        type: email
+        width: 33
+      press_email:
+        label: Press email
+        type: email
+        width: 33
+      careers_email:
+        label: Careers email
+        type: email
+        width: 34
+      address:
+        label: Address
+        rows: 4
+        type: textarea
+        width: 50
+      legal_name:
+        label: Legal name
+        type: text
+        width: 25
+      company_number:
+        label: Company number
+        type: text
+        width: 25
+      registered_office:
+        label: Registered office
+        type: text
+  site_settings_social:
+    options_pages: [site_settings]
+    title: Social
+    fields:
+      social:
+        fields:
+          label: { label: Label, type: text, width: 33 }
+          icon: { choices: { linkedin: LinkedIn, x: X }, label: Icon, type: select, width: 33 }
+          url: { label: URL, type: url, width: 34 }
+        label: Social links
+        type: repeater
+  site_settings_footer:
+    options_pages: [site_settings]
+    title: Footer
+    fields:
+      footer_notice:
+        label: Footer notice
+        rows: 3
+        type: textarea
+  site_settings_cta:
+    options_pages: [site_settings]
+    title: Closing CTA
+    fields:
+      cta_default_heading:
+        label: Default heading
+        type: text
+      cta_default_body:
+        label: Default body
+        rows: 3
+        type: textarea

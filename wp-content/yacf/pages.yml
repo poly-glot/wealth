@@ -1,0 +1,41 @@
+field_groups:
+  page_hero:
+    post_types: [page]
+    title: Hero
+    fields:
+      subtitle:
+        label: Hero subtitle
+        rows: 2
+        type: textarea
+  page_front:
+    post_types: [page]
+    title: Front page
+    fields:
+      hero_line_1:
+        label: Hero line 1
+        type: text
+        width: 33
+      hero_line_2:
+        label: Hero line 2
+        type: text
+        width: 33
+      hero_line_3:
+        label: Hero line 3
+        type: text
+        width: 34
+      hero_body:
+        label: Hero sub-sentence
+        rows: 2
+        type: textarea
+      about_heading:
+        label: About us heading
+        type: text
+      about_body:
+        label: About us body
+        type: wysiwyg
+      opportunities_heading:
+        label: Investment opportunities heading
+        type: text
+      opportunities_body:
+        label: Investment opportunities body
+        type: wysiwyg

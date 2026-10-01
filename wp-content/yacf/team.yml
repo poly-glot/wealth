@@ -1,0 +1,48 @@
+post_types:
+  team_member:
+    archive: true
+    icon: dashicons-groups
+    label: People
+    rewrite: people
+    singular: Person
+    supports: [title, editor, thumbnail, page-attributes]
+
+field_groups:
+  team_member_details:
+    post_types: [team_member]
+    title: Profile
+    fields:
+      role:
+        column: { sortable: true }
+        label: Role
+        type: text
+        width: 50
+      group:
+        choices: [Investment Team, Executive Management]
+        column: { sortable: true }
+        label: Group
+        type: select
+        width: 50
+      lead:
+        label: Lead paragraph
+        rows: 4
+        searchable: true
+        type: textarea
+      linkedin:
+        label: LinkedIn
+        type: url
+        width: 33
+      x:
+        label: X
+        type: url
+        width: 33
+      email:
+        label: Email
+        type: email
+        width: 34
+      strategies:
+        column: true
+        label: Manages
+        multiple: true
+        post_types: [strategy]
+        type: post

@@ -1,0 +1,79 @@
+post_types:
+  strategy:
+    archive: true
+    icon: dashicons-chart-line
+    label: Strategies
+    rewrite: strategies
+    singular: Strategy
+    supports: [title, page-attributes]
+
+field_groups:
+  strategy_details:
+    post_types: [strategy]
+    title: Strategy
+    fields:
+      tint:
+        choices: { blue: Blue, lavender: Lavender, paper: Paper, tan: Tan }
+        column: true
+        label: Card tint
+        type: select
+        width: 33
+      tagline:
+        column: true
+        label: Tagline
+        type: text
+        width: 67
+      summary:
+        label: Summary
+        rows: 3
+        searchable: true
+        type: textarea
+      objective:
+        label: Objective
+        rows: 2
+        type: textarea
+      intro:
+        label: Intro
+        type: wysiwyg
+      feature_image:
+        label: Feature image
+        type: image
+      approach:
+        fields:
+          title: { label: Title, type: text, width: 30 }
+          text: { label: Text, rows: 3, type: textarea, width: 70 }
+        label: How we invest
+        type: repeater
+      facts:
+        fields:
+          label: { label: Label, type: text, width: 30 }
+          value: { label: Value, type: text, width: 70 }
+        label: At a glance
+        type: repeater
+      risks:
+        label: Key risks
+        type: wysiwyg
+      documents:
+        fields:
+          label: { label: Label, type: text }
+        label: Documents
+        type: repeater
+      faqs:
+        fields:
+          question: { label: Question, type: text }
+          answer: { label: Answer, rows: 3, type: textarea }
+        label: Questions investors ask
+        type: repeater
+      managers:
+        column: true
+        label: Managed by
+        multiple: true
+        post_types: [team_member]
+        type: post
+      cta_heading:
+        label: CTA heading
+        type: text
+      cta_body:
+        label: CTA body
+        rows: 3
+        type: textarea
