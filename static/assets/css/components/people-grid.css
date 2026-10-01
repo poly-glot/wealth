@@ -1,0 +1,82 @@
+.people-grid {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    list-style: none;
+    padding: 0;
+}
+
+.person-card {
+    background: var(--color-paper);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    position: relative;
+}
+
+.person-card__image {
+    aspect-ratio: 6 / 7;
+    background: var(--color-card-paper);
+    filter: grayscale(1);
+    object-fit: cover;
+    object-position: 50% 15%;
+    width: 100%;
+}
+
+.person-card:hover .person-card__image,
+.person-card:focus-within .person-card__image {
+    filter: none;
+}
+
+.person-card__caption {
+    display: grid;
+    gap: var(--space-1);
+    padding: var(--space-5) var(--space-5);
+    transition: background var(--duration) var(--ease);
+}
+
+.person-card:hover .person-card__caption,
+.person-card:focus-within .person-card__caption {
+    background: var(--color-tan);
+}
+
+.person-card__name {
+    color: var(--color-ink);
+    font-size: var(--text-lg);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.person-card__name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.person-card__name a::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+}
+
+.person-card__role {
+    color: var(--color-ink);
+    font-size: var(--text-md);
+    line-height: 1.4;
+}
+
+.person-card:hover .person-card__name,
+.person-card:hover .person-card__role,
+.person-card:focus-within .person-card__name,
+.person-card:focus-within .person-card__role {
+    color: var(--color-ink-deep);
+}
+
+.person-card .icon {
+    display: inline-block;
+    margin-left: var(--space-2);
+    transition: transform var(--duration) var(--ease);
+    vertical-align: -0.05em;
+}
+
+.person-card:hover .icon {
+    transform: translateX(3px);
+}

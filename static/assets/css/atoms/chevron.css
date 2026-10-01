@@ -1,0 +1,32 @@
+.chevron {
+    color: var(--color-copper-light);
+    display: block;
+    margin: var(--space-7) auto 0;
+    padding: var(--space-2);
+    transition:
+        color var(--duration) var(--ease),
+        transform var(--duration) var(--ease);
+    width: fit-content;
+}
+
+.chevron:hover {
+    color: var(--color-copper);
+    transform: translateY(4px);
+}
+
+.chevron__icon {
+    fill: none;
+    height: clamp(2rem, 1.6rem + 1.4vw, 3.125rem);
+    stroke: currentColor;
+    stroke-width: 2;
+    width: clamp(3.5rem, 2.8rem + 2.4vw, 5.375rem);
+}
+
+.chevron--light,
+.chevron--light:hover {
+    color: var(--color-white);
+}
+
+.chevron--light:focus-visible {
+    outline-color: var(--color-white);
+}

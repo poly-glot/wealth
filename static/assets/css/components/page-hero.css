@@ -1,0 +1,59 @@
+.page-hero {
+    background: var(--color-section);
+    color: var(--color-ink-strong);
+    text-align: center;
+}
+
+.page-hero__inner {
+    display: grid;
+    gap: var(--space-4);
+    justify-items: center;
+    padding-block: clamp(var(--space-7), 1.5rem + 4vw, 5rem);
+}
+
+.page-hero__eyebrow {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.page-hero__title {
+    color: inherit;
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    max-width: 22em;
+    text-transform: uppercase;
+}
+
+.page-hero__lead {
+    font-size: var(--text-md);
+    max-width: var(--measure);
+}
+
+.page-hero__eyebrow a {
+    color: inherit;
+}
+
+.page-hero--tan {
+    background: var(--color-tan);
+    color: var(--color-ink-deep);
+}
+
+.page-hero--slate {
+    background: var(--color-slate);
+    color: var(--color-white);
+}
+
+.page-hero--slate a:focus-visible {
+    outline-color: var(--color-white);
+}
+
+.page-hero--aqua {
+    background: var(--color-aqua);
+    color: var(--color-ink-deep);
+}

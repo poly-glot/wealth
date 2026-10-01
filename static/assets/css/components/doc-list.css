@@ -1,0 +1,24 @@
+.doc-list {
+    list-style: none;
+    padding: 0;
+}
+
+.doc-list__link {
+    align-items: center;
+    border-bottom: 1px solid var(--color-section);
+    color: var(--color-ink-strong);
+    display: flex;
+    gap: var(--space-3);
+    min-height: 3rem;
+    padding-block: var(--space-3);
+    text-decoration: none;
+}
+
+.doc-list__link .icon {
+    color: var(--color-copper);
+}
+
+.doc-list__link:hover {
+    color: var(--color-ink-deep);
+    text-decoration: underline;
+}

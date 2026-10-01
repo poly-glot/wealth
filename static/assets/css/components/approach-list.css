@@ -1,0 +1,32 @@
+.approach-list {
+    counter-reset: approach;
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    list-style: none;
+    padding: 0;
+}
+
+.approach-list__item {
+    border-top: 1px solid var(--color-copper-light);
+    counter-increment: approach;
+    display: grid;
+    gap: var(--space-3);
+    padding-top: var(--space-5);
+}
+
+.approach-list__item::before {
+    color: var(--color-copper);
+    content: counter(approach, decimal-leading-zero) / "";
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-variant-numeric: lining-nums;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.approach-list__title {
+    color: var(--color-ink);
+    font-size: var(--text-lg);
+    text-transform: uppercase;
+}
