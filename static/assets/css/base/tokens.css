@@ -42,7 +42,6 @@
     --measure: 40rem;
     --measure-wide: 52rem;
     --container: 85.375rem;
-    --container-narrow: 59.375rem;
     --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
     --grid-gap: 1.25rem;
     --header-height: 5.5rem;

@@ -10,7 +10,7 @@ while ( have_posts() ) {
 
 	preg_match( '/^((?:\s*<p class="legal__[a-z]+">.*?<\/p>)*)(.*)$/s', $content['intro'], $intro );
 	?>
-	<div class="with-aside container container--narrow">
+	<div class="with-aside container">
 		<div class="with-aside__main legal">
 			<?php echo wp_kses_post( $intro[1] ); ?>
 			<div class="prose">

@@ -5,10 +5,6 @@
     width: 100%;
 }
 
-.container--narrow {
-    max-width: calc(var(--container-narrow) + var(--gutter) * 2);
-}
-
 .container--measure {
     max-width: calc(var(--measure) + var(--gutter) * 2);
 }

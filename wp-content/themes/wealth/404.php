@@ -8,7 +8,7 @@ get_template_part( 'template-parts/hero-page', null, array(
 ) );
 ?>
 <div class="section">
-	<div class="container container--narrow">
+	<div class="container">
 		<div class="button-row">
 			<a class="button button--solid" href="<?php echo esc_url( home_url( '/' ) ); ?>">Go to the home page</a>
 			<a class="button" href="<?php echo esc_url( wealth_page_url( 'contact' ) ); ?>">Contact us</a>

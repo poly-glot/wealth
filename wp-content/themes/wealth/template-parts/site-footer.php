@@ -1,5 +1,5 @@
 <footer class="site-footer">
-	<div class="site-footer__inner container container--narrow">
+	<div class="site-footer__inner container">
 		<?php get_template_part( 'template-parts/logo' ); ?>
 		<div class="site-footer__text">
 			<p><?php echo esc_html( (string) get_option( 'footer_notice' ) ); ?></p>

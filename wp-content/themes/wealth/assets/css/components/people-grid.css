@@ -1,9 +1,14 @@
 .people-grid {
     display: grid;
     gap: var(--grid-gap);
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
     list-style: none;
     padding: 0;
+}
+
+@media (min-width: 48rem) {
+    .people-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 .person-card {

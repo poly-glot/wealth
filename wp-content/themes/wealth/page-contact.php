@@ -11,7 +11,7 @@ while ( have_posts() ) {
 
 	$content = wealth_content_sections( apply_filters( 'the_content', get_the_content() ) );
 	?>
-	<div class="with-aside container container--narrow">
+	<div class="with-aside container">
 		<div class="with-aside__main">
 			<div class="prose">
 				<?php echo wp_kses_post( $content['intro'] ); ?>

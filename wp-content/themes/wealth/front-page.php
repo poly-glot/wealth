@@ -33,7 +33,7 @@ $map_id  = $contact ? get_post_thumbnail_id( $contact ) : 0;
 </section>
 
 <section class="section screen" id="people" aria-labelledby="people-title">
-	<div class="container container--narrow screen__body">
+	<div class="container screen__body">
 		<h2 class="display section__title" id="people-title">People</h2>
 		<?php get_template_part( 'template-parts/loop-people', null, array( 'posts' => $people ) ); ?>
 		<div class="screen__next">

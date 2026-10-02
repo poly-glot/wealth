@@ -15,7 +15,7 @@ $people = get_posts( array(
 ) );
 ?>
 <div class="section">
-	<div class="container container--narrow">
+	<div class="container">
 		<?php get_template_part( 'template-parts/loop-people', null, array( 'heading' => 'h2', 'posts' => $people ) ); ?>
 	</div>
 </div>
