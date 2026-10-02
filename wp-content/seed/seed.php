@@ -127,32 +127,7 @@ $opportunities_body = <<<'HTML'
 <p>We believe the shift towards passive and index-driven capital leaves durable mispricings in UK and European equities and in short-dated sterling credit. Each strategy is available as a segregated mandate or through a pooled vehicle for eligible investors, with full transparency of holdings, costs and voting.</p>
 HTML;
 
-$contact_content = <<<'HTML'
-<p>We speak directly to pension schemes, insurers, charities, family offices, wealth managers and the consultants who advise them. There is no call centre and no sales team between you and the investment team. Write to us, call us or use the form below, and a named person will reply.</p>
-<h2>What happens next</h2>
-<ol>
-<li><strong>We read your message the same day.</strong> A partner decides who is best placed to reply, usually the portfolio manager of the strategy you asked about.</li>
-<li><strong>We reply within two working days.</strong> If we need more detail about your objectives, we will ask for it then.</li>
-<li><strong>We meet if it makes sense.</strong> In person in St James's or by video. If none of our strategies fits what you need, we will say so at the first conversation rather than the third.</li>
-</ol>
-<h2>Who to contact</h2>
-<h3>Investors and consultants</h3>
-<p>For new mandates, existing investments, due diligence questionnaires and requests for information.</p>
-<p><a href="mailto:enquiries@wealth-am.co.uk">enquiries@wealth-am.co.uk</a> · <a href="tel:+442079460123">+44&nbsp;(0)20&nbsp;7946&nbsp;0123</a></p>
-<h3>Press</h3>
-<p>For interviews, comment and requests for data. We aim to reply to journalists the same working day.</p>
-<p><a href="mailto:press@wealth-am.co.uk">press@wealth-am.co.uk</a></p>
-<h3>Careers</h3>
-<p>We recruit rarely and do not advertise every role. If you would like to work in investment research or operations, send a short note and your CV.</p>
-<p><a href="mailto:careers@wealth-am.co.uk">careers@wealth-am.co.uk</a></p>
-<h3>Our office</h3>
-<p>Wealth Asset Management LLP, 14 King Street, St James's, London SW1Y 6QU.</p>
-<p>Open Monday to Friday, 8.30am to 6pm. The nearest Underground station is Green Park.</p>
-HTML;
-
 $legal_content = <<<'HTML'
-<p class="legal__notice"><strong>This is a demonstration website.</strong> Wealth Asset Management is a fictional firm. It is not authorised or regulated by the Financial Conduct Authority or by any other regulator, it does not appear on the Financial Services Register and it does not carry on any regulated activity. The people, strategies, figures and articles on this site are invented. Nothing here is an offer, a recommendation or investment advice.</p>
-<p class="legal__updated">Last updated 1 October 2026</p>
 <h2 id="who-we-are">Who we are</h2>
 <p>In this notice, "Wealth", "we" and "us" mean Wealth Asset Management LLP, a limited liability partnership registered in England and Wales with number OC000000. Our registered office is at 14 King Street, St James's, London SW1Y 6QU. You can contact us at enquiries@wealth-am.co.uk or on +44 (0)20 7946 0123.</p>
 <h2 id="regulatory-status">Regulatory status</h2>
@@ -182,7 +157,6 @@ $legal_content = <<<'HTML'
 HTML;
 
 $privacy_content = <<<'HTML'
-<p class="legal__updated">Last updated 1 October 2026</p>
 <p>Wealth is a fictional firm and this is a demonstration website. This notice describes how the site handles the small amount of personal data it collects. Please do not send real personal or financial information through the site.</p>
 <h2 id="who-is-responsible-for-your-data">Who is responsible for your data</h2>
 <p>Wealth Asset Management LLP, 14 King Street, St James's, London SW1Y 6QU, is the controller of personal data collected through this website. You can contact us about privacy at enquiries@wealth-am.co.uk. Please put "Privacy" in the subject line.</p>
@@ -224,7 +198,6 @@ $privacy_content = <<<'HTML'
 HTML;
 
 $cookies_content = <<<'HTML'
-<p class="legal__updated">Last updated 1 October 2026</p>
 <h2 id="our-cookies">Our cookies</h2>
 <p>This website sets no cookies of its own. We do not use analytics, advertising or social media tracking, so there is no cookie banner to accept or decline.</p>
 <h2 id="fonts">Fonts</h2>
@@ -238,7 +211,6 @@ $cookies_content = <<<'HTML'
 HTML;
 
 $accessibility_content = <<<'HTML'
-<p class="legal__updated">Last reviewed 1 October 2026</p>
 <h2 id="our-commitment">Our commitment</h2>
 <p>We want everyone who visits this site to be able to read it, navigate it and contact us, whatever device or assistive technology they use. This statement applies to every page on this demonstration website.</p>
 <h2 id="conformance-status">Conformance status</h2>
@@ -277,9 +249,25 @@ HTML;
 ], $img['hero-millennium-bridge.jpg'] );
 $created_pages += $c;
 
-[ $contact_id, $c ] = wealth_seed_post( 'page', 'contact', [ 'post_content' => $contact_content, 'post_title' => 'Contact' ], [
-	'subtitle' => 'Talk to the people who manage the money',
-], $img['map-st-james.jpg'] );
+[ $contact_id, $c ] = wealth_seed_post( 'page', 'contact', [ 'post_content' => '', 'post_title' => 'Contact' ], [
+	'contact_groups' => [
+		[ 'email' => 'enquiries@wealth-am.co.uk', 'phone' => '+44 (0)20 7946 0123', 'phone_href' => '+442079460123', 'text' => 'For new mandates, existing investments, due diligence questionnaires and requests for information.', 'title' => 'Investors and consultants' ],
+		[ 'email' => 'press@wealth-am.co.uk', 'phone' => '', 'phone_href' => '', 'text' => 'For interviews, comment and requests for data. We aim to reply to journalists the same working day.', 'title' => 'Press' ],
+		[ 'email' => 'careers@wealth-am.co.uk', 'phone' => '', 'phone_href' => '', 'text' => 'We recruit rarely and do not advertise every role. If you would like to work in investment research or operations, send a short note and your CV.', 'title' => 'Careers' ],
+		[ 'email' => '', 'phone' => '', 'phone_href' => '', 'text' => "Wealth Asset Management LLP, 14 King Street, St James's, London SW1Y 6QU.\n\nOpen Monday to Friday, 8.30am to 6pm. The nearest Underground station is Green Park.", 'title' => 'Our office' ],
+	],
+	'contact_intro'  => 'We speak directly to pension schemes, insurers, charities, family offices, wealth managers and the consultants who advise them. There is no call centre and no sales team between you and the investment team. Write to us, call us or use the form below, and a named person will reply.',
+	'contact_steps'  => [
+		[ 'text' => 'A partner decides who is best placed to reply, usually the portfolio manager of the strategy you asked about.', 'title' => 'We read your message the same day.' ],
+		[ 'text' => 'If we need more detail about your objectives, we will ask for it then.', 'title' => 'We reply within two working days.' ],
+		[ 'text' => "In person in St James's or by video. If none of our strategies fits what you need, we will say so at the first conversation rather than the third.", 'title' => 'We meet if it makes sense.' ],
+	],
+	'form_intro'     => 'Fields marked optional can be left blank. Everything else is needed so that we can reply.',
+	'form_note'      => 'Wealth is a fictional firm. Please do not send real personal or financial information through this form.',
+	'subtitle'       => 'Talk to the people who manage the money',
+	'thank_you'      => '<p>We have received your message and a member of the team will reply within two working days. If your enquiry is urgent, call us on <a href="tel:+442079460123">+44&nbsp;(0)20&nbsp;7946&nbsp;0123</a>.</p>' . "\n" . '<p><a href="/">Back to the home page</a></p>',
+] );
+delete_post_thumbnail( $contact_id );
 $created_pages += $c;
 
 [ $news_id, $c ] = wealth_seed_post( 'page', 'news', [ 'post_title' => 'Insights' ], [
@@ -287,16 +275,29 @@ $created_pages += $c;
 ] );
 $created_pages += $c;
 
-[ $legal_id, $c ] = wealth_seed_post( 'page', 'legal', [ 'post_content' => $legal_content, 'post_title' => 'Important information' ] );
+[ $legal_id, $c ] = wealth_seed_post( 'page', 'legal', [ 'post_content' => $legal_content, 'post_title' => 'Important information' ], [
+	'last_updated'  => '2026-10-01',
+	'notice'        => 'This is a demonstration website. Wealth Asset Management is a fictional firm. It is not authorised or regulated by the Financial Conduct Authority or by any other regulator, it does not appear on the Financial Services Register and it does not carry on any regulated activity. The people, strategies, figures and articles on this site are invented. Nothing here is an offer, a recommendation or investment advice.',
+	'updated_label' => 'updated',
+] );
 $created_pages += $c;
 
-[ $privacy_id, $c ] = wealth_seed_post( 'page', 'privacy', [ 'post_content' => $privacy_content, 'post_title' => 'Privacy notice' ] );
+[ $privacy_id, $c ] = wealth_seed_post( 'page', 'privacy', [ 'post_content' => $privacy_content, 'post_title' => 'Privacy notice' ], [
+	'last_updated'  => '2026-10-01',
+	'updated_label' => 'updated',
+] );
 $created_pages += $c;
 
-[ $cookies_id, $c ] = wealth_seed_post( 'page', 'cookies', [ 'post_content' => $cookies_content, 'post_title' => 'Cookie notice' ] );
+[ $cookies_id, $c ] = wealth_seed_post( 'page', 'cookies', [ 'post_content' => $cookies_content, 'post_title' => 'Cookie notice' ], [
+	'last_updated'  => '2026-10-01',
+	'updated_label' => 'updated',
+] );
 $created_pages += $c;
 
-[ $accessibility_id, $c ] = wealth_seed_post( 'page', 'accessibility', [ 'post_content' => $accessibility_content, 'post_title' => 'Accessibility statement' ] );
+[ $accessibility_id, $c ] = wealth_seed_post( 'page', 'accessibility', [ 'post_content' => $accessibility_content, 'post_title' => 'Accessibility statement' ], [
+	'last_updated'  => '2026-10-01',
+	'updated_label' => 'reviewed',
+] );
 $created_pages += $c;
 
 echo "pages: {$created_pages} created\n";
@@ -508,51 +509,45 @@ echo "strategies: {$created_strategies} created, " . count( $strategy_ids ) . " 
 $team = [
 	'eleanor-whitcombe' => [
 		'content'    => '<p>Eleanor began her career in 1999 as a UK equity analyst in the investment arm of a large British life insurer, covering utilities and telecoms and later the banks. In 2006 she moved to a long-established City fund house, where she managed UK income portfolios for pension schemes and charities for seven years and sat on its stewardship committee.</p><p>She left in 2013 to found Wealth with James Hartley. Her view then, and now, is that a small firm with a fixed capacity serves clients better than a large one with a sales target. She read Modern History at Durham University and is a trustee of an almshouse charity in south London.</p><p>Outside work she grows dahlias on an allotment in Camberwell and is walking the Thames Path from source to sea, one weekend at a time.</p>',
-		'group'      => 'Investment Team',
+		'group'      => 'investment',
 		'lead'       => 'Eleanor Whitcombe co-founded Wealth in 2013 and has led its investment team ever since. She has managed UK equity income portfolios for more than 20 years and still runs the UK Equity Income Strategy herself, with Daniel Okafor. As Chief Investment Officer she chairs the asset allocation and stewardship committees, and every position the firm takes passes across her desk. Clients know her for short answers and long holding periods.',
 		'name'       => 'Eleanor Whitcombe',
 		'role'       => 'Chief Investment Officer',
-		'strategies' => [ 'uk-equity-income' ],
 	],
 	'daniel-okafor' => [
 		'content'    => '<p>Daniel grew up in Leeds and read Economics at the University of Manchester. He trained as a chartered accountant with a large audit firm, working mostly on engineering and manufacturing clients in the north of England. The experience taught him how a factory makes money and how a set of accounts can hide that it does not.</p><p>In 2008 he moved into investment as a European industrials analyst in the London office of a large continental asset manager. Four years later he went to Frankfurt to co-manage a European small and mid-cap fund for the investment arm of a German private bank. He joined Wealth in 2016 to build the European strategy and became Head of Equities in 2021. He speaks German and passable Dutch.</p><p>He holds a season ticket at Elland Road and rides one Alpine pass every summer, usually a little more slowly than the year before.</p>',
-		'group'      => 'Investment Team',
+		'group'      => 'investment',
 		'lead'       => "Daniel Okafor leads the firm's equity research and manages the European Quality Growth Strategy, which he launched in 2017. He also co-manages the UK Equity Income Strategy with Eleanor Whitcombe. Daniel trained as an accountant, and it shows: he reads the notes to the accounts before the chair's statement, and he will not buy a company until he can say where its cash goes. He spends a week in every month visiting companies on the continent.",
 		'name'       => 'Daniel Okafor',
 		'role'       => 'Head of Equities',
-		'strategies' => [ 'european-quality-growth', 'uk-equity-income' ],
 	],
 	'sophie-lindqvist' => [
 		'content'    => '<p>Sophie was born in Gothenburg and studied at the Stockholm School of Economics before taking an MSc in Finance at the London School of Economics. She joined the London credit research team of a Scandinavian bank in the summer of 2008, weeks before the financial crisis reached its worst. She spent her first year learning what happens to bonds when nobody wants to buy them.</p><p>From 2011 she managed short-dated sterling credit for the in-house investment team of a UK annuity insurer, where every portfolio had to meet a schedule of pension payments. That discipline, matching what you own to what you owe, shapes how she runs money today.</p><p>She swims in the Hampstead ponds all year round and sings alto in a chamber choir in Islington.</p>',
-		'group'      => 'Investment Team',
+		'group'      => 'investment',
 		'lead'       => 'Sophie Lindqvist manages the Short-Dated Sterling Credit Strategy, which she joined Wealth to build in 2016, and the bond holdings in the Global Multi-Asset Income Strategy. She has spent 18 years looking at companies the way a lender does: what they owe, when it falls due and what happens if things go wrong. She and her team of three analysts follow around 200 sterling issuers. She is a CFA charterholder.',
 		'name'       => 'Sophie Lindqvist',
 		'role'       => 'CFA, Portfolio Manager, Fixed Income',
-		'strategies' => [ 'short-dated-sterling-credit', 'global-multi-asset-income' ],
 	],
 	'james-hartley' => [
 		'content'    => '<p>James began as an economist in the civil service, forecasting public borrowing. In 1998 he joined a City investment house as a gilt and interest-rate strategist, and he spent the next decade writing about central banks for its fixed income clients. He then moved across to run its UK institutional client team and later its whole UK business.</p><p>He founded Wealth with Eleanor Whitcombe because he had watched too many good investment teams grow until they could no longer do what had made them good. He read Economics at the University of Cambridge. He is a governor of a secondary school in Lambeth and sits on the investment committee of a medical research charity.</p><p>At home in East Sussex he keeps bees, with mixed results.</p>',
-		'group'      => 'Executive Management',
+		'group'      => 'executive',
 		'lead'       => "James Hartley co-founded Wealth in 2013 and has been Chief Executive since. He is responsible for the firm's direction, its partnership and its relationships with its largest clients. James spent the first half of his career in sterling bond markets and the second running client businesses. As a result he asks of every investment decision how it will look to the person whose money it is. He chairs the management committee.",
 		'name'       => 'James Hartley',
 		'role'       => 'Chief Executive',
-		'strategies' => [],
 	],
 	'hannah-mercer' => [
 		'content'    => "<p>Hannah read Mathematics at the University of Bristol and qualified as a chartered accountant while working in fund accounting at a global custodian. She spent five years reconciling other people's portfolios and learned that most operational failures start with a spreadsheet nobody owns.</p><p>In 2007 she joined a mid-sized London fund manager and became its head of operations. There she led the move to a new fund administrator, rebuilt client reporting from scratch and ran the firm's response to two changes of regulation. At Wealth she has kept the operating model deliberately simple: one administrator, one depositary, one set of numbers that every team uses.</p><p>She runs fell races in the Lake District most summers and is treasurer of a youth orchestra in Richmond.</p>",
-		'group'      => 'Executive Management',
+		'group'      => 'executive',
 		'lead'       => "Hannah Mercer runs everything at Wealth that is not investment: operations, risk, compliance, technology and client reporting. She joined in 2015 from a London fund manager, where she was head of operations, and became Chief Operating Officer and a partner in 2018. The plain quarterly reports our clients receive are her design. She chairs the risk committee and is the firm's main contact with its depositary, auditors and fund administrator.",
 		'name'       => 'Hannah Mercer',
 		'role'       => 'Chief Operating Officer',
-		'strategies' => [],
 	],
 	'tomas-herrera' => [
 		'content'    => "<p>Tomás was born in Seville and grew up in Madrid. He studied Economics at Universidad Carlos III de Madrid and took an MSc in Financial Mathematics at the University of Warwick. He started as a quantitative analyst in the asset management arm of a Spanish insurer, modelling how long policyholders would live and what that meant for the bonds the company held.</p><p>In 2011 he moved to London to join the fiduciary management team of a pensions consultancy, running multi-asset portfolios for defined benefit schemes, and later led its income portfolios. He joined Wealth in 2020 to design the multi-asset strategy from first principles, using the firm's own equity and credit research rather than other managers' funds.</p><p>He plays chess for a club in Hammersmith and is visiting, without much hurry, every Romanesque church in Castile.</p>",
-		'group'      => 'Investment Team',
+		'group'      => 'investment',
 		'lead'       => 'Tomás Herrera manages the Global Multi-Asset Income Strategy, which he launched at Wealth in 2021. He decides how the portfolio is divided between shares, bonds and real assets, within the ranges set by the asset allocation committee, and he picks the global equity and infrastructure holdings himself. Before Wealth he spent a decade building income portfolios for pension schemes. He is a CFA charterholder and thinks in scenarios rather than forecasts.',
 		'name'       => 'Tomás Herrera',
 		'role'       => 'CFA, Portfolio Manager, Multi-Asset',
-		'strategies' => [ 'global-multi-asset-income' ],
 	],
 ];
 
@@ -567,9 +562,9 @@ foreach ( $team as $slug => $member ) {
 		'lead'       => $member['lead'],
 		'linkedin'   => 'https://www.linkedin.com/in/' . $slug,
 		'role'       => $member['role'],
-		'strategies' => array_map( fn ( $s ) => $strategy_ids[ $s ], $member['strategies'] ),
 		'x'          => 'https://x.com/' . str_replace( '-', '', $slug ),
 	], $img[ 'team-' . $slug . '.jpg' ] );
+	delete_post_meta( $id, 'strategies' );
 	$team_ids[ $slug ] = $id;
 	$created_team     += $c;
 }
@@ -768,22 +763,27 @@ foreach ( $posts as $slug => $post ) {
 echo "posts: {$created_posts} created, " . count( $posts ) . " total\n";
 
 $options = [
-	'address'             => "Wealth Asset Management LLP\n14 King Street\nSt James's\nLondon SW1Y 6QU",
-	'careers_email'       => 'careers@wealth-am.co.uk',
-	'company_number'      => 'OC000000',
-	'cta_default_body'    => 'Our team speaks directly to investors and their advisers. Tell us about your objectives and we will tell you plainly whether one of our strategies fits.',
-	'cta_default_heading' => 'Start a conversation',
-	'email'               => 'enquiries@wealth-am.co.uk',
-	'footer_notice'       => 'Wealth Asset Management is a fictional firm created for this demonstration website. Nothing on this site is an offer, a recommendation or investment advice. Capital is at risk and the value of investments can fall as well as rise.',
-	'legal_name'          => 'Wealth Asset Management LLP',
-	'phone'               => '+44 (0)20 7946 0123',
-	'phone_href'          => '+442079460123',
-	'press_email'         => 'press@wealth-am.co.uk',
-	'registered_office'   => "14 King Street, St James's, London SW1Y 6QU",
-	'social'              => [
+	'address'                  => "Wealth Asset Management LLP\n14 King Street\nSt James's\nLondon SW1Y 6QU",
+	'careers_email'            => 'careers@wealth-am.co.uk',
+	'company_number'           => 'OC000000',
+	'cta_default_body'         => 'Our team speaks directly to investors and their advisers. Tell us about your objectives and we will tell you plainly whether one of our strategies fits.',
+	'cta_default_heading'      => 'Start a conversation',
+	'email'                    => 'enquiries@wealth-am.co.uk',
+	'footer_notice'            => 'Wealth Asset Management is a fictional firm created for this demonstration website. Nothing on this site is an offer, a recommendation or investment advice. Capital is at risk and the value of investments can fall as well as rise.',
+	'legal_name'               => 'Wealth Asset Management LLP',
+	'map_image'                => $img['map-st-james.jpg'],
+	'people_archive_intro'     => "Wealth is owned by the people who work here, and the people who manage your capital are the people you meet. Our investment team and our executive team sit on one floor in St James's. Between them they have spent more than a century in markets, and none of them is in a hurry to leave.",
+	'people_archive_title'     => 'People',
+	'phone'                    => '+44 (0)20 7946 0123',
+	'phone_href'               => '+442079460123',
+	'press_email'              => 'press@wealth-am.co.uk',
+	'registered_office'        => "14 King Street, St James's, London SW1Y 6QU",
+	'social'                   => [
 		[ 'icon' => 'linkedin', 'label' => 'LinkedIn', 'url' => 'https://www.linkedin.com/company/wealth-asset-management' ],
 		[ 'icon' => 'x', 'label' => 'X', 'url' => 'https://x.com/wealthassetmgmt' ],
 	],
+	'strategies_archive_intro' => 'We run four strategies and no more than we can manage well. Each draws on the same research and the same small team, and each has a clear limit on the assets it will take. All four are available as a segregated mandate or through a pooled fund for eligible investors, with every holding, cost and vote disclosed.',
+	'strategies_archive_title' => 'Investment strategies',
 ];
 
 foreach ( $options as $name => $value ) {

@@ -2,8 +2,8 @@
 get_header();
 
 get_template_part( 'template-parts/hero-page', null, array(
-	'lead'    => 'We run four strategies and no more than we can manage well. Each draws on the same research and the same small team, and each has a clear limit on the assets it will take. All four are available as a segregated mandate or through a pooled fund for eligible investors, with every holding, cost and vote disclosed.',
-	'title'   => 'Investment strategies',
+	'lead'    => (string) get_option( 'strategies_archive_intro' ),
+	'title'   => get_option( 'strategies_archive_title' ) ?: 'Investment strategies',
 	'variant' => 'tan',
 ) );
 

@@ -3,7 +3,7 @@ $name       = get_the_title();
 $linkedin   = (string) wealth_meta( 'linkedin' );
 $x_url      = (string) wealth_meta( 'x' );
 $vcard      = 'assets/vcards/' . get_post_field( 'post_name' ) . '.vcf';
-$strategies = wealth_posts_by_id( (array) wealth_meta( 'strategies' ), 'strategy' );
+$strategies = wealth_strategies_managed_by( get_the_ID() );
 $insight    = wealth_latest_insight_for( get_the_ID() );
 $category   = $insight ? ( get_the_category( $insight->ID )[0] ?? null ) : null;
 ?>
@@ -12,7 +12,7 @@ $category   = $insight ? ( get_the_category( $insight->ID )[0] ?? null ) : null;
 		<div class="bio__body">
 			<h1 class="bio__name" id="bio-name"><?php echo esc_html( $name ); ?></h1>
 			<p class="bio__role"><?php echo esc_html( wealth_meta( 'role' ) ); ?></p>
-			<p class="bio__role"><?php echo esc_html( wealth_meta( 'group' ) ); ?></p>
+			<p class="bio__role"><?php echo esc_html( wealth_group_label( (string) wealth_meta( 'group' ) ) ); ?></p>
 			<div class="bio__text">
 				<p><?php echo esc_html( wealth_meta( 'lead' ) ); ?></p>
 				<?php the_content(); ?>

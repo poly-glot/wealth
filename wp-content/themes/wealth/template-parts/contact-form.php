@@ -49,5 +49,8 @@
 		<p class="form-field__error">Tick the box so that we can reply to you</p>
 	</div>
 	<button class="button button--solid contact-form__submit" type="submit">Send enquiry</button>
-	<p class="form-field__hint">Wealth is a fictional firm. Please do not send real personal or financial information through this form.</p>
+	<?php $form_note = (string) wealth_meta( 'form_note' ); ?>
+	<?php if ( $form_note ) : ?>
+		<p class="form-field__hint"><?php echo esc_html( $form_note ); ?></p>
+	<?php endif; ?>
 </form>

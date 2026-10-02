@@ -7,6 +7,20 @@ field_groups:
         label: Hero subtitle
         rows: 2
         type: textarea
+      last_updated:
+        label: Last updated
+        type: date
+        width: 50
+      updated_label:
+        choices: { reviewed: Last reviewed, updated: Last updated }
+        default: updated
+        label: Date label
+        type: select
+        width: 50
+      notice:
+        label: Notice panel
+        rows: 4
+        type: textarea
   page_front:
     post_types: [page]
     title: Front page
@@ -41,4 +55,38 @@ field_groups:
         type: text
       opportunities_body:
         label: Investment opportunities body
+        type: wysiwyg
+  page_contact:
+    post_types: [page]
+    title: Contact page
+    fields:
+      contact_intro:
+        label: Intro
+        rows: 3
+        type: textarea
+      contact_steps:
+        fields:
+          title: { label: Title, type: text, width: 30 }
+          text: { label: Text, rows: 2, type: textarea, width: 70 }
+        label: What happens next
+        type: repeater
+      contact_groups:
+        fields:
+          title: { label: Title, type: text }
+          text: { label: Text, rows: 3, type: textarea }
+          email: { label: Email, type: email, width: 34 }
+          phone: { label: Phone (display), type: text, width: 33 }
+          phone_href: { label: Phone (tel link), type: text, width: 33 }
+        label: Who to contact
+        type: repeater
+      form_intro:
+        label: Form intro
+        rows: 2
+        type: textarea
+      form_note:
+        label: Form note
+        rows: 2
+        type: textarea
+      thank_you:
+        label: Thank-you message
         type: wysiwyg

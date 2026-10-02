@@ -44,6 +44,9 @@ field_groups:
       registered_office:
         label: Registered office
         type: text
+      map_image:
+        label: Map image
+        type: image
   site_settings_social:
     options_pages: [site_settings]
     title: Social
@@ -73,4 +76,24 @@ field_groups:
       cta_default_body:
         label: Default body
         rows: 3
+        type: textarea
+  site_settings_archives:
+    options_pages: [site_settings]
+    title: Archives
+    fields:
+      strategies_archive_title:
+        default: Investment strategies
+        label: Strategies archive title
+        type: text
+      strategies_archive_intro:
+        label: Strategies archive intro
+        rows: 4
+        type: textarea
+      people_archive_title:
+        default: People
+        label: People archive title
+        type: text
+      people_archive_intro:
+        label: People archive intro
+        rows: 4
         type: textarea

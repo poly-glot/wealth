@@ -18,7 +18,7 @@ field_groups:
         type: text
         width: 50
       group:
-        choices: [Investment Team, Executive Management]
+        choices: { executive: Executive Management, investment: Investment Team }
         column: { sortable: true }
         label: Group
         type: select
@@ -40,9 +40,3 @@ field_groups:
         label: Email
         type: email
         width: 34
-      strategies:
-        column: true
-        label: Manages
-        multiple: true
-        post_types: [strategy]
-        type: post

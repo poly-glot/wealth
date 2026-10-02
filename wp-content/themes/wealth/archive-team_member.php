@@ -2,8 +2,8 @@
 get_header();
 
 get_template_part( 'template-parts/hero-page', null, array(
-	'lead'    => 'Wealth is owned by the people who work here, and the people who manage your capital are the people you meet. Our investment team and our executive team sit on one floor in St James\'s. Between them they have spent more than a century in markets, and none of them is in a hurry to leave.',
-	'title'   => 'People',
+	'lead'    => (string) get_option( 'people_archive_intro' ),
+	'title'   => get_option( 'people_archive_title' ) ?: 'People',
 	'variant' => 'tan',
 ) );
 

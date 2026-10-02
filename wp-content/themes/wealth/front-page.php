@@ -18,8 +18,7 @@ $people = get_posts( array(
 	'posts_per_page' => -1,
 ) );
 
-$contact = get_page_by_path( 'contact' );
-$map_id  = $contact ? get_post_thumbnail_id( $contact ) : 0;
+$map_id = (int) get_option( 'map_image' );
 ?>
 <section class="section section--grey screen" id="strategies" aria-labelledby="strategies-title">
 	<div class="container screen__body">

@@ -55,7 +55,8 @@ field_groups:
         type: wysiwyg
       documents:
         fields:
-          label: { label: Label, type: text }
+          label: { label: Label, type: text, width: 60 }
+          file: { label: File, type: file, width: 40 }
         label: Documents
         type: repeater
       faqs:

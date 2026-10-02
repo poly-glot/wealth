@@ -17,6 +17,7 @@ field_groups:
         type: text
         width: 50
       organisation:
+        column: true
         label: Organisation
         type: text
         width: 50
@@ -31,7 +32,7 @@ field_groups:
         width: 50
       investor_type:
         choices: [Institutional investor, Wealth manager or adviser, Consultant, Family office, Press, Other]
-        column: true
+        column: { sortable: true }
         label: Investor type
         type: select
       message:

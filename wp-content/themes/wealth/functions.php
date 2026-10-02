@@ -11,6 +11,16 @@ const WEALTH_INVESTOR_TYPES = array(
 
 const WEALTH_LEGAL_PAGES = array( 'legal', 'privacy', 'cookies', 'accessibility' );
 
+const WEALTH_GROUP_LABELS = array(
+	'executive'  => 'Executive Management',
+	'investment' => 'Investment Team',
+);
+
+const WEALTH_UPDATED_LABELS = array(
+	'reviewed' => 'Last reviewed',
+	'updated'  => 'Last updated',
+);
+
 add_action( 'after_setup_theme', function () {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
@@ -173,6 +183,34 @@ function wealth_posts_by_id( array $ids, string $post_type ): array {
 	) );
 
 	return array_combine( wp_list_pluck( $posts, 'ID' ), $posts );
+}
+
+function wealth_group_label( string $key ): string {
+	return WEALTH_GROUP_LABELS[ $key ] ?? '';
+}
+
+function wealth_strategies_managed_by( int $person_id ): array {
+	$strategies = get_posts( array(
+		'order'          => 'ASC',
+		'orderby'        => 'menu_order',
+		'post_type'      => 'strategy',
+		'posts_per_page' => -1,
+	) );
+
+	$by_role = array();
+
+	foreach ( $strategies as $strategy ) {
+		$managers = array_map( 'intval', (array) wealth_meta( 'managers', $strategy->ID ) );
+		$position = array_search( $person_id, $managers, true );
+
+		if ( false !== $position ) {
+			$by_role[ $position ][] = $strategy;
+		}
+	}
+
+	ksort( $by_role );
+
+	return array_merge( ...$by_role );
 }
 
 function wealth_names_sentence( array $people ): string {
