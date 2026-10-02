@@ -7,7 +7,7 @@ $strategies = wealth_posts_by_id( (array) wealth_meta( 'strategies' ), 'strategy
 $insight    = wealth_latest_insight_for( get_the_ID() );
 $category   = $insight ? ( get_the_category( $insight->ID )[0] ?? null ) : null;
 ?>
-<article class="bio__inner container container--narrow" aria-labelledby="bio-name">
+<article class="bio__inner container" aria-labelledby="bio-name">
 	<div class="bio__panel">
 		<div class="bio__body">
 			<h1 class="bio__name" id="bio-name"><?php echo esc_html( $name ); ?></h1>
