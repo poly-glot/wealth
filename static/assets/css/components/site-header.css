@@ -1,9 +1,8 @@
 .site-header {
     background: var(--color-white);
     border-bottom: 1px solid var(--color-card-paper);
-    position: sticky;
-    top: 0;
-    z-index: 50;
+    padding-block: var(--header-padding);
+    position: relative;
 }
 
 .site-header__inner {
@@ -122,7 +121,7 @@
         border-top: 1px solid var(--color-card-paper);
         display: none;
         flex-direction: column;
-        inset: var(--header-height) 0 auto;
+        inset: 100% 0 auto;
         padding: var(--space-3) var(--gutter) var(--space-5);
         position: absolute;
     }

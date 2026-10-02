@@ -42,11 +42,11 @@ $map_id  = $contact ? get_post_thumbnail_id( $contact ) : 0;
 	</div>
 </section>
 
-<section class="contact-band screen" id="contact" aria-labelledby="contact-title">
+<section class="contact-band" id="contact" aria-labelledby="contact-title">
 	<div class="contact-band__header">
 		<h2 class="display display--light" id="contact-title">Contact</h2>
 	</div>
-	<div class="contact-band__map screen__body">
+	<div class="contact-band__map">
 		<?php if ( $map_id ) : ?>
 			<?php echo wp_get_attachment_image( $map_id, 'full', false, array( 'class' => 'contact-band__image', 'alt' => '', 'loading' => 'lazy' ) ); ?>
 		<?php endif; ?>

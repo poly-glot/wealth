@@ -21,7 +21,11 @@
 .screen {
     display: flex;
     flex-direction: column;
-    min-height: calc(100svh - var(--header-height));
+    min-height: 100svh;
+}
+
+.screen--below-header {
+    min-height: calc(100svh - var(--header-height) - var(--header-padding) * 2);
 }
 
 .screen__body {
@@ -88,7 +92,7 @@
     .with-aside__aside {
         align-self: start;
         position: sticky;
-        top: calc(var(--header-height) + var(--space-6));
+        top: var(--space-6);
     }
 }
 

@@ -21,7 +21,7 @@
 
 .home-hero__panel {
     background: var(--color-veil);
-    max-width: 54rem;
+    max-width: 56rem;
     padding: clamp(var(--space-6), 3vw + var(--space-2), 4rem) clamp(var(--space-5), 5vw, 5.5rem);
     width: 100%;
 }

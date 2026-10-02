@@ -45,6 +45,7 @@
     --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
     --grid-gap: 1.25rem;
     --header-height: 5.5rem;
+    --header-padding: 0.9375rem;
 
     --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     --duration: 180ms;
