@@ -21,7 +21,7 @@ const WEALTH_UPDATED_LABELS = array(
 	'updated'  => 'Last updated',
 );
 
-add_action( 'after_setup_theme', function () {
+function wealth_setup(): void {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption', 'style', 'script' ) );
@@ -38,7 +38,9 @@ add_action( 'after_setup_theme', function () {
 	add_image_size( 'portrait', 900, 1200, true );
 	add_image_size( 'card', 800, 450, true );
 	add_image_size( 'thumb', 240, 240, true );
-} );
+}
+
+add_action( 'after_setup_theme', 'wealth_setup' );
 
 function wealth_stylesheets(): array {
 	$css   = get_theme_file_path( 'assets/css/' );

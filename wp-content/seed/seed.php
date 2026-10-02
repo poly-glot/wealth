@@ -9,6 +9,15 @@ if ( get_stylesheet() !== 'wealth' ) {
 	echo "theme: switched to wealth\n";
 }
 
+if ( ! function_exists( 'wealth_setup' ) ) {
+	require_once get_theme_file_path( 'functions.php' );
+	wealth_setup();
+}
+
+function wealth_seed_media_signature(): string {
+	return md5( wp_json_encode( [ wp_get_registered_image_subsizes(), wp_image_editor_supports( [ 'mime_type' => 'image/webp' ] ) ] ) );
+}
+
 function wealth_seed_attachment( $filename, $alt ) {
 	$existing = get_posts( [
 		'meta_key'    => '_wealth_seed_file',
@@ -18,10 +27,17 @@ function wealth_seed_attachment( $filename, $alt ) {
 		'post_type'   => 'attachment',
 	] );
 
-	if ( $existing ) {
+	$signature = wealth_seed_media_signature();
+
+	if ( $existing && get_post_meta( $existing[0]->ID, '_wealth_seed_signature', true ) === $signature ) {
 		$id = (int) $existing[0]->ID;
 		update_post_meta( $id, '_wp_attachment_image_alt', $alt );
 		return $id;
+	}
+
+	if ( $existing ) {
+		wp_delete_attachment( $existing[0]->ID, true );
+		echo "media REGENERATING {$filename}\n";
 	}
 
 	$source = __DIR__ . '/img/' . $filename;
@@ -43,6 +59,7 @@ function wealth_seed_attachment( $filename, $alt ) {
 	}
 
 	update_post_meta( $id, '_wealth_seed_file', $filename );
+	update_post_meta( $id, '_wealth_seed_signature', $signature );
 	update_post_meta( $id, '_wp_attachment_image_alt', $alt );
 
 	return (int) $id;
