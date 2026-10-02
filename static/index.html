@@ -125,7 +125,11 @@
         </header>
         <main id="main" tabindex="-1">
             <section class="home-hero screen screen--below-header" aria-labelledby="hero-title">
-                <img class="home-hero__image" src="/assets/img/hero-skyline.jpg" alt="" width="2400" height="1150" fetchpriority="high">
+                <picture class="home-hero__picture">
+                    <source type="image/avif" srcset="/assets/img/hero/hero-millennium-bridge-960.avif 960w, /assets/img/hero/hero-millennium-bridge-1440.avif 1440w, /assets/img/hero/hero-millennium-bridge-1920.avif 1920w" sizes="100vw">
+                    <source type="image/webp" srcset="/assets/img/hero/hero-millennium-bridge-960.webp 960w, /assets/img/hero/hero-millennium-bridge-1440.webp 1440w, /assets/img/hero/hero-millennium-bridge-1920.webp 1920w" sizes="100vw">
+                    <img class="home-hero__image" src="/assets/img/hero/hero-millennium-bridge-1920.jpg" srcset="/assets/img/hero/hero-millennium-bridge-960.jpg 960w, /assets/img/hero/hero-millennium-bridge-1440.jpg 1440w, /assets/img/hero/hero-millennium-bridge-1920.jpg 1920w" sizes="100vw" alt="" width="1920" height="920" fetchpriority="high">
+                </picture>
                 <div class="home-hero__panel">
                     <h1 class="home-hero__title" id="hero-title">
                         <span class="home-hero__line">Wealth is an independent</span>

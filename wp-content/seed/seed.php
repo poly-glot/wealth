@@ -86,7 +86,10 @@ function wealth_seed_menu( $name, $items ) {
 }
 
 $alts = [
-	'hero-skyline.jpg'                              => 'The City of London skyline across the Thames at blue hour',
+	'hero-escalators.jpg'                           => 'Escalators rising towards the dome of St Paul\'s Cathedral',
+	'hero-millennium-bridge.jpg'                    => 'St Paul\'s Cathedral from the Millennium Bridge at dusk',
+	'hero-tower-bridge.jpg'                         => 'Tower Bridge lit at night over the Thames',
+	'hero-underground.jpg'                          => 'An empty London Underground passage',
 	'map-st-james.jpg'                              => "Greyscale street map of St James's, centred on King Street",
 	'news-case-for-short-dated-sterling-credit.jpg' => 'A stack of bound ledgers on a wooden desk',
 	'news-multi-asset-income-outlook.jpg'           => 'Electricity pylons crossing open farmland at dusk',
@@ -265,12 +268,13 @@ HTML;
 	'about_body'            => $about_body,
 	'about_heading'         => "A partner-owned firm in St James's",
 	'hero_body'             => 'We manage focused equity, credit and multi-asset portfolios for institutional and professional investors.',
+	'hero_images'           => array_values( array_filter( [ $img['hero-millennium-bridge.jpg'], $img['hero-tower-bridge.jpg'], $img['hero-escalators.jpg'], $img['hero-underground.jpg'] ] ) ),
 	'hero_line_1'           => 'Wealth is an independent',
 	'hero_line_2'           => 'investment manager',
 	'hero_line_3'           => 'based in London.',
 	'opportunities_body'    => $opportunities_body,
 	'opportunities_heading' => 'One process, four strategies',
-], $img['hero-skyline.jpg'] );
+], $img['hero-millennium-bridge.jpg'] );
 $created_pages += $c;
 
 [ $contact_id, $c ] = wealth_seed_post( 'page', 'contact', [ 'post_content' => $contact_content, 'post_title' => 'Contact' ], [

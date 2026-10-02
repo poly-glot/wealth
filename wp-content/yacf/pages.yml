@@ -27,6 +27,9 @@ field_groups:
         label: Hero sub-sentence
         rows: 2
         type: textarea
+      hero_images:
+        label: Hero pictures (one is shown at random)
+        type: gallery
       about_heading:
         label: About us heading
         type: text

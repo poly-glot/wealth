@@ -1,6 +1,6 @@
 <?php $front_id = (int) get_option( 'page_on_front' ); ?>
 <section class="home-hero screen screen--below-header" aria-labelledby="hero-title">
-	<?php echo get_the_post_thumbnail( $front_id, 'hero', array( 'class' => 'home-hero__image', 'alt' => '', 'fetchpriority' => 'high' ) ); ?>
+	<?php echo wp_get_attachment_image( wealth_hero_image_id( $front_id ), 'hero', false, array( 'class' => 'home-hero__image', 'alt' => '', 'fetchpriority' => 'high', 'sizes' => '100vw' ) ); ?>
 	<div class="home-hero__panel">
 		<h1 class="home-hero__title" id="hero-title">
 			<?php foreach ( array( 'hero_line_1', 'hero_line_2', 'hero_line_3' ) as $line ) : ?>

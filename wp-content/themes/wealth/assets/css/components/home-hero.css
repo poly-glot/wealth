@@ -9,6 +9,10 @@
     position: relative;
 }
 
+.home-hero__picture {
+    display: contents;
+}
+
 .home-hero__image {
     height: 100%;
     inset: 0;

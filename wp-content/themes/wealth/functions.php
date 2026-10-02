@@ -21,7 +21,9 @@ add_action( 'after_setup_theme', function () {
 		'legal'   => 'Legal',
 	) );
 
-	add_image_size( 'hero', 2400, 1150, true );
+	add_image_size( 'hero', 1920, 920, true );
+	add_image_size( 'hero-medium', 1440, 690, true );
+	add_image_size( 'hero-small', 960, 460, true );
 	add_image_size( 'feature', 1600, 900, true );
 	add_image_size( 'portrait', 900, 1200, true );
 	add_image_size( 'card', 800, 450, true );
@@ -60,6 +62,14 @@ add_action( 'wp_enqueue_scripts', function () {
 } );
 
 add_filter( 'document_title_separator', fn () => '|' );
+
+add_filter( 'image_editor_output_format', fn ( array $formats ) => $formats + array( 'image/jpeg' => 'image/webp' ) );
+
+function wealth_hero_image_id( int $front_id ): int {
+	$ids = array_filter( array_map( 'intval', (array) wealth_meta( 'hero_images', $front_id ) ) );
+
+	return $ids ? $ids[ array_rand( $ids ) ] : (int) get_post_thumbnail_id( $front_id );
+}
 
 function wealth_section_urls(): array {
 	if ( is_front_page() ) {
