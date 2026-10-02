@@ -1,5 +1,5 @@
 <?php $front_id = (int) get_option( 'page_on_front' ); ?>
-<section class="home-hero" aria-labelledby="hero-title">
+<section class="home-hero screen" aria-labelledby="hero-title">
 	<?php echo get_the_post_thumbnail( $front_id, 'hero', array( 'class' => 'home-hero__image', 'alt' => '', 'fetchpriority' => 'high' ) ); ?>
 	<div class="home-hero__panel">
 		<h1 class="home-hero__title" id="hero-title">

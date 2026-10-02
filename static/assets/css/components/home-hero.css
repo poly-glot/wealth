@@ -4,7 +4,6 @@
     display: grid;
     isolation: isolate;
     justify-items: center;
-    min-height: clamp(30rem, 75vh, 47.875rem);
     overflow: hidden;
     padding: clamp(var(--space-7), 8vw, 8.1875rem) var(--gutter) clamp(7rem, 5rem + 6vw, 11rem);
     position: relative;

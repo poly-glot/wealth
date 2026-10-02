@@ -5,7 +5,7 @@ $panels   = array(
 	'investment-opportunities' => array( 'opportunities_heading', 'opportunities_body' ),
 );
 ?>
-<section class="tabs" aria-labelledby="tabs-title">
+<section class="tabs screen" aria-labelledby="tabs-title">
 	<h2 class="visually-hidden" id="tabs-title">About Wealth</h2>
 	<ul class="tabs__list">
 		<li><a class="tabs__tab" href="#about-us">About us</a></li>
@@ -22,7 +22,7 @@ $panels   = array(
 			</div>
 		</div>
 	<?php endforeach; ?>
-	<div class="tabs__next">
+	<div class="tabs__next screen__next">
 		<?php get_template_part( 'template-parts/chevron', null, array( 'href' => '#strategies', 'label' => 'Continue to Investment strategies' ) ); ?>
 	</div>
 </section>

@@ -18,6 +18,22 @@
     position: relative;
 }
 
+.screen {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100svh - var(--header-height));
+}
+
+.screen__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.screen__next {
+    margin-top: auto;
+}
+
 .section--grey {
     background: var(--color-section);
     isolation: isolate;

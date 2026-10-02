@@ -124,7 +124,7 @@
             </div>
         </header>
         <main id="main" tabindex="-1">
-            <section class="home-hero" aria-labelledby="hero-title">
+            <section class="home-hero screen" aria-labelledby="hero-title">
                 <img class="home-hero__image" src="/assets/img/hero-skyline.jpg" alt="" width="2400" height="1150" fetchpriority="high">
                 <div class="home-hero__panel">
                     <h1 class="home-hero__title" id="hero-title">
@@ -144,7 +144,7 @@
                 </div>
             </section>
 
-            <section class="tabs" aria-labelledby="tabs-title">
+            <section class="tabs screen" aria-labelledby="tabs-title">
                 <h2 class="visually-hidden" id="tabs-title">About Wealth</h2>
                 <ul class="tabs__list">
                     <li><a class="tabs__tab" href="#about-us">About us</a></li>
@@ -187,7 +187,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tabs__next">
+                <div class="tabs__next screen__next">
                     <a class="chevron" href="#strategies">
                         <svg class="chevron__icon" aria-hidden="true" focusable="false"><use href="#icon-chevron" /></svg>
                         <span class="visually-hidden">Continue to Investment strategies</span>
@@ -195,8 +195,8 @@
                 </div>
             </section>
 
-            <section class="section section--grey" id="strategies" aria-labelledby="strategies-title">
-                <div class="container container--narrow">
+            <section class="section section--grey screen" id="strategies" aria-labelledby="strategies-title">
+                <div class="container container--narrow screen__body">
                     <h2 class="display section__title" id="strategies-title">Investment strategies</h2>
                     <ul class="strategy-grid">
                         <li class="strategy-card strategy-card--blue">
@@ -228,16 +228,18 @@
                             </a>
                         </li>
                     </ul>
-                    <a class="chevron" href="#people">
-                        <svg class="chevron__icon" aria-hidden="true" focusable="false"><use href="#icon-chevron" /></svg>
-                        <span class="visually-hidden">Continue to People</span>
-                    </a>
+                    <div class="screen__next">
+                        <a class="chevron" href="#people">
+                            <svg class="chevron__icon" aria-hidden="true" focusable="false"><use href="#icon-chevron" /></svg>
+                            <span class="visually-hidden">Continue to People</span>
+                        </a>
+                    </div>
                 </div>
                 <svg class="strategy-grid__motif motif motif--light" aria-hidden="true" focusable="false" viewBox="0 0 120 120"><use href="#mark" /></svg>
             </section>
 
-            <section class="section" id="people" aria-labelledby="people-title">
-                <div class="container container--narrow">
+            <section class="section screen" id="people" aria-labelledby="people-title">
+                <div class="container container--narrow screen__body">
                     <h2 class="display section__title" id="people-title">People</h2>
                     <ul class="people-grid">
                         <li class="person-card">
@@ -295,18 +297,20 @@
                             </div>
                         </li>
                     </ul>
-                    <a class="chevron" href="#contact">
-                        <svg class="chevron__icon" aria-hidden="true" focusable="false"><use href="#icon-chevron" /></svg>
-                        <span class="visually-hidden">Continue to Contact</span>
-                    </a>
+                    <div class="screen__next">
+                        <a class="chevron" href="#contact">
+                            <svg class="chevron__icon" aria-hidden="true" focusable="false"><use href="#icon-chevron" /></svg>
+                            <span class="visually-hidden">Continue to Contact</span>
+                        </a>
+                    </div>
                 </div>
             </section>
 
-            <section class="contact-band" id="contact" aria-labelledby="contact-title">
+            <section class="contact-band screen" id="contact" aria-labelledby="contact-title">
                 <div class="contact-band__header">
                     <h2 class="display display--light" id="contact-title">Contact</h2>
                 </div>
-                <div class="contact-band__map">
+                <div class="contact-band__map screen__body">
                     <img class="contact-band__image" src="/assets/img/map-st-james.jpg" alt="" width="1600" height="746" loading="lazy">
                     <address class="contact-card">
                         <div class="contact-card__row contact-card__address">
