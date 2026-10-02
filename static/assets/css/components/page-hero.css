@@ -32,7 +32,7 @@
 
 .page-hero__lead {
     font-size: var(--text-md);
-    max-width: var(--measure);
+    max-width: 45rem;
 }
 
 .page-hero__eyebrow a {
