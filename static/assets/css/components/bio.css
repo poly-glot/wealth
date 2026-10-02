@@ -1,9 +1,12 @@
 .bio {
+    background: var(--color-card-paper);
+}
+
+.bio__inner {
     padding-top: var(--space-7);
 }
 
 .bio__panel {
-    background: var(--color-card-paper);
     display: grid;
     overflow: hidden;
 }

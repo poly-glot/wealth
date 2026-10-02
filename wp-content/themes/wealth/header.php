@@ -14,4 +14,4 @@
 		<a class="skip-link" href="#main">Skip to content</a>
 		<?php get_template_part( 'template-parts/icon-sprite' ); ?>
 		<?php get_template_part( 'template-parts/site-header' ); ?>
-		<main id="main" tabindex="-1">
+		<main<?php echo is_singular( 'team_member' ) ? ' class="bio"' : ''; ?> id="main" tabindex="-1">
