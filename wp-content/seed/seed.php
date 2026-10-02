@@ -94,21 +94,16 @@ function wealth_seed_menu( $name, $items ) {
 	$id       = $menu ? $menu->term_id : wp_create_nav_menu( $name );
 	$existing = wp_get_nav_menu_items( $id ) ?: [];
 
-	if ( ! $existing ) {
-		foreach ( $items as $item ) {
-			wp_update_nav_menu_item( $id, 0, $item + [ 'menu-item-status' => 'publish' ] );
-		}
-
-		return $id;
-	}
-
 	$by_title = array_column( $existing, null, 'title' );
 
-	foreach ( $items as $item ) {
+	foreach ( array_values( $items ) as $index => $item ) {
+		$item   += [ 'menu-item-position' => $index + 1, 'menu-item-status' => 'publish' ];
 		$current = $by_title[ $item['menu-item-title'] ] ?? null;
 
-		if ( $current && 'custom' === $item['menu-item-type'] && $current->url !== $item['menu-item-url'] ) {
-			wp_update_nav_menu_item( $id, $current->db_id, $item + [ 'menu-item-status' => 'publish' ] );
+		if ( ! $existing ) {
+			wp_update_nav_menu_item( $id, 0, $item );
+		} elseif ( $current && ( (int) $current->menu_order !== $item['menu-item-position'] || ( 'custom' === $item['menu-item-type'] && $current->url !== $item['menu-item-url'] ) ) ) {
+			wp_update_nav_menu_item( $id, $current->db_id, $item );
 		}
 	}
 
