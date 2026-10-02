@@ -138,12 +138,11 @@
 }
 
 .bio__portrait {
-    align-self: stretch;
+    align-self: start;
     aspect-ratio: 3 / 4;
     background: var(--color-section);
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    object-position: 50% 0;
     width: 100%;
 }
 
