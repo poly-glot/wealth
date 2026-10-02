@@ -22,7 +22,7 @@ $contact = get_page_by_path( 'contact' );
 $map_id  = $contact ? get_post_thumbnail_id( $contact ) : 0;
 ?>
 <section class="section section--grey screen" id="strategies" aria-labelledby="strategies-title">
-	<div class="container container--narrow screen__body">
+	<div class="container screen__body">
 		<h2 class="display section__title" id="strategies-title">Investment strategies</h2>
 		<?php get_template_part( 'template-parts/loop-strategies', null, array( 'posts' => $strategies ) ); ?>
 		<div class="screen__next">

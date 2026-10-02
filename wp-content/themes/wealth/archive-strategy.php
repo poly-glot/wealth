@@ -15,7 +15,7 @@ $strategies = get_posts( array(
 ) );
 ?>
 <div class="section section--grey">
-	<div class="container container--narrow">
+	<div class="container">
 		<?php get_template_part( 'template-parts/loop-strategies', null, array( 'heading' => 'h2', 'posts' => $strategies, 'summary' => true ) ); ?>
 	</div>
 	<svg class="strategy-grid__motif motif motif--light" aria-hidden="true" focusable="false" viewBox="0 0 120 120"><use href="#mark" /></svg>

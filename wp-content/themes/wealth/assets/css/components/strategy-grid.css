@@ -1,9 +1,14 @@
 .strategy-grid {
     display: grid;
     gap: var(--grid-gap);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
     list-style: none;
     padding: 0;
+}
+
+@media (min-width: 48rem) {
+    .strategy-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 .strategy-card {
@@ -33,9 +38,10 @@
 
 .strategy-card__title {
     color: var(--color-ink-strong);
-    font-size: var(--text-xl);
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
     line-height: 1.2;
     text-transform: uppercase;
+    text-wrap: balance;
 }
 
 .strategy-card__summary {
