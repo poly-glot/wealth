@@ -86,7 +86,7 @@ function wealth_seed_menu( $name, $items ) {
 }
 
 $alts = [
-	'hero-skyline.jpg'                              => "London rooftops at dusk, looking across St James's towards Westminster",
+	'hero-skyline.jpg'                              => 'The City of London skyline across the Thames at blue hour',
 	'map-st-james.jpg'                              => "Greyscale street map of St James's, centred on King Street",
 	'news-case-for-short-dated-sterling-credit.jpg' => 'A stack of bound ledgers on a wooden desk',
 	'news-multi-asset-income-outlook.jpg'           => 'Electricity pylons crossing open farmland at dusk',
