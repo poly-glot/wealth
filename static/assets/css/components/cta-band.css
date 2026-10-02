@@ -19,7 +19,7 @@
 
 .cta-band__body {
     font-size: var(--text-md);
-    max-width: var(--measure);
+    max-width: 45rem;
 }
 
 .cta-band a:not(.button) {
