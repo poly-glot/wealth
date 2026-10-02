@@ -126,8 +126,10 @@ add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
 
 	$section_urls ??= array_map( 'untrailingslashit', wealth_section_urls() );
 
+	$url = str_starts_with( $item->url, '/' ) ? home_url( $item->url ) : $item->url;
+
 	$atts['class']        = 'site-nav__link';
-	$atts['aria-current'] = in_array( untrailingslashit( $item->url ), $section_urls, true ) ? 'page' : '';
+	$atts['aria-current'] = in_array( untrailingslashit( $url ), $section_urls, true ) ? 'page' : '';
 
 	return $atts;
 }, 10, 3 );

@@ -90,12 +90,25 @@ function wealth_seed_post( $type, $slug, $args, $meta = [], $thumb = 0 ) {
 }
 
 function wealth_seed_menu( $name, $items ) {
-	$menu = wp_get_nav_menu_object( $name );
-	$id   = $menu ? $menu->term_id : wp_create_nav_menu( $name );
+	$menu     = wp_get_nav_menu_object( $name );
+	$id       = $menu ? $menu->term_id : wp_create_nav_menu( $name );
+	$existing = wp_get_nav_menu_items( $id ) ?: [];
 
-	if ( ! wp_get_nav_menu_items( $id ) ) {
+	if ( ! $existing ) {
 		foreach ( $items as $item ) {
 			wp_update_nav_menu_item( $id, 0, $item + [ 'menu-item-status' => 'publish' ] );
+		}
+
+		return $id;
+	}
+
+	$by_title = array_column( $existing, null, 'title' );
+
+	foreach ( $items as $item ) {
+		$current = $by_title[ $item['menu-item-title'] ] ?? null;
+
+		if ( $current && 'custom' === $item['menu-item-type'] && $current->url !== $item['menu-item-url'] ) {
+			wp_update_nav_menu_item( $id, $current->db_id, $item + [ 'menu-item-status' => 'publish' ] );
 		}
 	}
 
@@ -809,7 +822,7 @@ foreach ( $options as $name => $value ) {
 echo "options: " . count( $options ) . " set\n";
 
 wealth_seed_menu( 'Primary', [
-	[ 'menu-item-title' => 'About', 'menu-item-type' => 'custom', 'menu-item-url' => home_url( '/#about-us' ) ],
+	[ 'menu-item-title' => 'About', 'menu-item-type' => 'custom', 'menu-item-url' => '/#about-us' ],
 	[ 'menu-item-object' => 'strategy', 'menu-item-title' => 'Strategy', 'menu-item-type' => 'post_type_archive' ],
 	[ 'menu-item-object' => 'team_member', 'menu-item-title' => 'People', 'menu-item-type' => 'post_type_archive' ],
 	[ 'menu-item-object' => 'page', 'menu-item-object-id' => $news_id, 'menu-item-title' => 'News', 'menu-item-type' => 'post_type' ],
