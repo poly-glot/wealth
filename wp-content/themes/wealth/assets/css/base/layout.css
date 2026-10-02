@@ -78,6 +78,11 @@
     min-width: 0;
 }
 
+.with-aside__main .prose,
+.with-aside__main .faq__answer {
+    max-width: var(--measure-wide);
+}
+
 .with-aside__aside {
     align-content: start;
     display: grid;

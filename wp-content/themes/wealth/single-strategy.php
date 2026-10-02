@@ -6,7 +6,7 @@ while ( have_posts() ) {
 
 	get_template_part( 'template-parts/hero-page', null, array(
 		'lead'    => (string) wealth_meta( 'tagline' ),
-		'variant' => 'tan',
+		'variant' => (string) wealth_meta( 'tint' ) ?: 'tan',
 	) );
 
 	$feature_id = (int) wealth_meta( 'feature_image' );
@@ -15,7 +15,7 @@ while ( have_posts() ) {
 		echo wp_get_attachment_image( $feature_id, 'feature', false, array( 'class' => 'feature-image', 'alt' => '' ) );
 	}
 	?>
-	<div class="with-aside container container--narrow">
+	<div class="with-aside container">
 		<div class="with-aside__main">
 			<?php
 			get_template_part( 'template-parts/strategy-overview' );

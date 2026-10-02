@@ -44,6 +44,18 @@
     color: var(--color-ink-deep);
 }
 
+.page-hero--blue {
+    background: var(--color-card-blue);
+}
+
+.page-hero--lavender {
+    background: var(--color-card-lavender);
+}
+
+.page-hero--paper {
+    background: var(--color-card-paper);
+}
+
 .page-hero--slate {
     background: var(--color-slate);
     color: var(--color-white);
