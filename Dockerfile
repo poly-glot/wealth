@@ -1,4 +1,4 @@
-FROM europe-west2-docker.pkg.dev/firebase-cloud-491613/firebase-cloud/wp-base:7.1-r2
+FROM europe-west2-docker.pkg.dev/firebase-cloud-491613/firebase-cloud/wp-base:7.1-r3
 
 COPY wp-content /app/public/wp-content
 
